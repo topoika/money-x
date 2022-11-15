@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_exchange/base/components/texts_widgets.dart';
 
 import '../helper/constants.dart';
 import '../helper/decorations.dart';
@@ -23,14 +24,7 @@ Widget tradeAdItem(BuildContext context, bool buy) => Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "490 NGN/\$",
-                      textAlign: TextAlign.left,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5!
-                          .copyWith(fontSize: getWidth(context, 5)),
-                    ),
+                    rateText(context, "490 NGN/\$", true),
                     RichText(
                       text: TextSpan(
                         text: 'Limit ',
@@ -64,15 +58,7 @@ Widget tradeAdItem(BuildContext context, bool buy) => Container(
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                '@davidt',
-                textAlign: TextAlign.left,
-                style: Theme.of(context).textTheme.headline6!.copyWith(
-                    decoration: TextDecoration.underline,
-                    fontSize: getWidth(context, 3.6),
-                    letterSpacing: 0,
-                    fontWeight: FontWeight.w400),
-              ),
+              atText(context, "@davidt"),
               RichText(
                 text: TextSpan(
                   text: 'Trade score  ',

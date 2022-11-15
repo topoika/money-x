@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../components/custom_appbars.dart';
+import '../components/order_item.dart';
 
 class OrderHistoryPage extends StatefulWidget {
   const OrderHistoryPage({Key? key}) : super(key: key);
@@ -14,7 +15,17 @@ class _OrderHisPageState extends State<OrderHistoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(title: "Order History", primary: false),
-      body: Container(),
+      body: ListView.builder(
+        itemCount: 10,
+        shrinkWrap: true,
+        physics: const ScrollPhysics(),
+        itemBuilder: (BuildContext context, int index) {
+          return InkWell(
+              onTap: () =>
+                  Navigator.pushNamed(context, "/OrderDetails", arguments: "1"),
+              child: orderItem(context));
+        },
+      ),
     );
   }
 }

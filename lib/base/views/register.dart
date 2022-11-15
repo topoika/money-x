@@ -99,7 +99,7 @@ class _RegisterPageState extends State<RegisterPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Checkbox(
-                    shape: CircleBorder(),
+                    shape: const CircleBorder(),
                     tristate: false,
                     value: checked,
                     activeColor: Colors.white,
