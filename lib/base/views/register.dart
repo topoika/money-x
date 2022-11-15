@@ -128,7 +128,7 @@ class _RegisterPageState extends State<RegisterPage> {
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () => Navigator.pushReplacementNamed(context, "/Pages"),
                 child: Container(
                     padding: EdgeInsets.all(getWidth(context, 4)),
                     decoration: BoxDecoration(

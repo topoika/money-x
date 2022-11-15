@@ -146,8 +146,7 @@ class _LoginPageState extends State<LoginPage> {
             Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
-                onTap: () =>
-                    Navigator.pushReplacementNamed(context, "/HomePage"),
+                onTap: () => Navigator.pushReplacementNamed(context, "/Pages"),
                 child: Container(
                     padding: EdgeInsets.all(getWidth(context, 4)),
                     decoration: BoxDecoration(

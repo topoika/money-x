@@ -16,12 +16,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void navigate() async {
-    bool? open = await opened();
-    open!
-        // ignore: use_build_context_synchronously
-        ? Navigator.pushReplacementNamed(context, "/Pages")
-        // ignore: use_build_context_synchronously
-        : Navigator.pushReplacementNamed(context, "/OnBoardingPage");
+    await opened().then((value) => Navigator.pushReplacementNamed(
+        context, !value! ? "/Pages" : "/OnBoardingPage"));
   }
 
   @override
