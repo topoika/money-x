@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^3.0.1
+  icons_launcher: ^2.0.6
   intl: ^0.17.0
   mvc_pattern: ^8.12.0
   shared_preferences: ^2.0.15
@@ -23,3 +24,14 @@ flutter:
   uses-material-design: true
   assets:
     - assets/img/
+icons_launcher:
+  image_path: "assets/img/logo.png"
+  platforms:
+    android:
+      enable: true
+      image_path: "assets/img/logo.png"
+      adaptive_foreground_image: "assets/img/logo.png"
+      adaptive_background_color: "#613EEA"
+    ios:
+      enable: true
+      image_path: "assets/img/logo.png"
