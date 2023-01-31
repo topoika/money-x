@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'views/buy_fiat.dart';
+import 'views/buy_one_fiat.dart';
 import 'views/login.dart';
 import 'views/on_boarding.dart';
 import 'views/order_details.dart';
@@ -21,6 +22,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const OrderHistoryPage());
       case '/SellFiatPage':
         return MaterialPageRoute(builder: (_) => const SellFiatPage());
+      case '/BuyFiatDetails':
+        return MaterialPageRoute(builder: (_) => const BuyFiatDetails());
       case '/BuyFiatPage':
         return MaterialPageRoute(builder: (_) => const BuyFiatPage());
       case '/OnBoardingPage':

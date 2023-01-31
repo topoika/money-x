@@ -16,8 +16,8 @@ class _PagesState extends State<Pages> {
   late int active;
   List<Widget> pages = const [
     HomePage(),
-    OrderHistoryPage(),
     HomePage(),
+    OrderHistoryPage(),
     OrderHistoryPage(),
   ];
   @override
@@ -47,9 +47,10 @@ class _PagesState extends State<Pages> {
         landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.filter_3), label: "History"),
-          BottomNavigationBarItem(icon: Icon(Icons.shop), label: "Orders"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Account")
+          BottomNavigationBarItem(icon: Icon(Icons.wallet), label: "Wallet"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.insert_chart_outlined_rounded), label: "Orders"),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings")
         ],
       ),
       floatingActionButton: FloatingActionButton(

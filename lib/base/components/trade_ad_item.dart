@@ -24,41 +24,23 @@ Widget tradeAdItem(BuildContext context, bool buy) => Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    rateText(context, "490 NGN/\$", true),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Limit ',
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                            color: Theme.of(context)
-                                .textTheme
-                                .bodyText1!
-                                .color!
-                                .withOpacity(.6)),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: '\$ 100 - \$ 2000',
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline5!
-                                .copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: black.withOpacity(.5),
-                                    fontSize: getWidth(context, 4)),
-                          ),
-                        ],
-                      ),
-                    ),
+                    rateText(context, "490 NGN/\$", true, false),
+                    limitText(context, 'Limit ', '\$ 100 - \$ 2000'),
                   ],
                 ),
               ),
-              smallButton(context, buy ? "Buy" : "Sell", () {}),
+              smallButton(
+                  context,
+                  buy ? "Buy" : "Sell",
+                  () => Navigator.pushNamed(
+                      context, buy ? "/BuyFiatDetails" : "/")),
             ],
           ),
           vertSpace(context, 1),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              atText(context, "@davidt"),
+              atText(context, "@davidt", true, 3.4),
               RichText(
                 text: TextSpan(
                   text: 'Trade score  ',

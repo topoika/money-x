@@ -23,17 +23,17 @@ Widget orderItem(BuildContext context) => Container(
                 children: <Widget>[
                   normalText(context, 'Buy order'),
                   vertSpace(context, 0.6),
-                  rateText(context, 'N35,500', true),
+                  rateText(context, 'N35,500', true,false),
                 ],
               ),
-              rateText(context, '@  N 490/\$', false),
+              rateText(context, '@  N 490/\$', false,false),
             ],
           ),
           vertSpace(context, .76),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              atText(context, "@davidt"),
+              atText(context, "@davidt",false,3.4),
               normalText(context, 'Pending', type: "pending"),
             ],
           )
