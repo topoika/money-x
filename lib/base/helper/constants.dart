@@ -22,3 +22,9 @@ double inputRadius = 4;
 String done = "assets/img/done.png";
 String user = "assets/img/user.png";
 // icons//
+
+// functions
+
+bool emailValid(String email) => RegExp(
+        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+    .hasMatch(email);
