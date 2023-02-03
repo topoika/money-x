@@ -68,3 +68,13 @@ Color getColor(String type) {
       return black.withOpacity(.4);
   }
 }
+
+Widget smallText(BuildContext context, String text, double font,
+        {FontWeight fontWeight = FontWeight.w400}) =>
+    Text(
+      text,
+      style: Theme.of(context).textTheme.bodyText2!.copyWith(
+          color: Theme.of(context).textTheme.bodyText2!.color!.withOpacity(.6),
+          fontWeight: fontWeight,
+          fontSize: getWidth(context, font)),
+    );

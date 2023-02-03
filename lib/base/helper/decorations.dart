@@ -59,3 +59,28 @@ InputDecoration inputDecoration(BuildContext context, String hint, String label,
             BorderSide(color: Theme.of(context).primaryColor, width: .7),
       ),
     );
+InputDecoration amountTextInputDecoration(
+        BuildContext context, String hint, label, suffix) =>
+    InputDecoration(
+      hintText: hint,
+      labelText: label,
+      suffix: Text(suffix, style: Theme.of(context).textTheme.headline6),
+      labelStyle: TextStyle(
+          color: Theme.of(context).primaryColor, fontWeight: FontWeight.w500),
+      hintStyle: Theme.of(context)
+          .textTheme
+          .bodySmall!
+          .copyWith(color: Theme.of(context).textTheme.headline6!.color),
+      fillColor: Theme.of(context).scaffoldBackgroundColor.withOpacity(.3),
+      filled: true,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(6),
+        borderSide:
+            BorderSide(color: Theme.of(context).primaryColor, width: .7),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(6),
+        borderSide:
+            BorderSide(color: Theme.of(context).primaryColor, width: .7),
+      ),
+    );

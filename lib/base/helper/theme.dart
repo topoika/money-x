@@ -9,6 +9,9 @@ ThemeData lightTheme() => ThemeData(
       accentColor: const Color(0xFFFF7D00),
       fontFamily: GoogleFonts.sarabun().fontFamily,
       textTheme: TextTheme(
+        headline1: TextStyle(
+          color: Colors.black,
+        ),
         headline6: TextStyle(
             color: purple,
             fontWeight: FontWeight.w600,
