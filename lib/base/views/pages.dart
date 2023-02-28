@@ -1,19 +1,25 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:money_exchange/base/views/home.dart';
-import 'package:money_exchange/base/views/order_history.dart';
+import 'package:mvc_pattern/mvc_pattern.dart';
+
+import '../components/drawer.dart';
+import '../data/controllers/main_controller.dart';
+import 'home.dart';
+import 'order_history.dart';
 
 class Pages extends StatefulWidget {
   final int active;
   const Pages({Key? key, required this.active}) : super(key: key);
 
   @override
-  State<Pages> createState() => _PagesState();
+  _PagesState createState() => _PagesState();
 }
 
-class _PagesState extends State<Pages> {
+class _PagesState extends StateMVC<Pages> {
   late int active;
+  late MainController con;
+  _PagesState() : super(MainController()) {
+    con = controller as MainController;
+  }
   List<Widget> pages = const [
     HomePage(),
     HomePage(),
@@ -29,6 +35,8 @@ class _PagesState extends State<Pages> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: con.globalScaffoldKey,
+      drawer: const DrawerWidget(),
       body: pages[active],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
@@ -54,9 +62,7 @@ class _PagesState extends State<Pages> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          log("FloatingActionButton pressed");
-        },
+        onPressed: () {},
         backgroundColor: Theme.of(context).primaryColor,
         child: const Icon(
           Icons.add,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_exchange/base/data/repository/settings_repository.dart';
+import 'package:money_exchange/base/data/repository/settings_repo.dart';
 
 import '../components/custom_buttons.dart';
 import '../helper/constants.dart';

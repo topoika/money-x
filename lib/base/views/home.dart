@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:mvc_pattern/mvc_pattern.dart';
 
 import '../components/custom_buttons.dart';
 import '../components/transaction_item.dart';
+import '../data/controllers/home_controller.dart';
 import '../helper/constants.dart';
 import '../helper/decorations.dart';
 
@@ -10,10 +12,14 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+class _HomePageState extends StateMVC<HomePage> with TickerProviderStateMixin {
+  late HomeController con;
+  _HomePageState() : super(HomeController()) {
+    con = controller as HomeController;
+  }
   bool visible = true;
   TabController? _tabController;
   @override
@@ -28,8 +34,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: con.globalScaffoldKey,
       appBar: AppBar(
-        leading: const Icon(Icons.notes_outlined),
+        leading: GestureDetector(
+            onTap: () =>
+                Scaffold.of(con.globalScaffoldKey.currentContext!).openDrawer(),
+            child: const Icon(Icons.notes_outlined)),
         title: const SizedBox(),
         actions: [
           Padding(
